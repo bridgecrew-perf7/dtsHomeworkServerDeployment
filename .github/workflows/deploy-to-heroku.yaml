@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
       - run: go version
-      - run: ./golangci-lint --verbose run -D errcheck
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - run: ./golangci-lint --verbose run -D errcheck # proses linting kode golang
+      - uses: akhileshns/heroku-deploy@v3.12.12 # Deploy ke heroku
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "homeworkServerDeployment-Rizqipratama1st" #Must be unique in Heroku
+          heroku_app_name: "dts-homework-server-deployment-04" 
           heroku_email: "rizqi.mailsos@gmail.com"
