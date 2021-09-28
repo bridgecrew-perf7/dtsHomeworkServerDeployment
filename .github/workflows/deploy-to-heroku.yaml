@@ -17,5 +17,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # Deploy ke heroku
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "dts-homework-server-deployment-04" 
+          heroku_app_name: "dts-hw-srv-dep-05" 
           heroku_email: "rizqi.mailsos@gmail.com"
