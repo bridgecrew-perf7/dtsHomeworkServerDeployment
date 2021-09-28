@@ -1,9 +1,10 @@
-name: Deploy
+name: "Deploy Ke Heroku By Rizqi Pratama"
 
 on:
   push:
     branches:
       - main
+      - master
 
 jobs:
   build:
