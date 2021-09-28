@@ -1,0 +1,20 @@
+name: Deploy-HW
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      - run: go version
+      - run: ./golangci-lint --verbose run -D errcheck
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "homeworkServerDeployment-Rizqipratama1st" #Must be unique in Heroku
+          heroku_email: "rizqi.mailsos@gmail.com"
