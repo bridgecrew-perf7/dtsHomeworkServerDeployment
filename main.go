@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -68,5 +69,8 @@ func main() {
 		})
 	})
 
-	app.Listen(":" + os.Getenv("PORT"))
+	err := app.Listen(":" + os.Getenv("PORT"))
+	if err != nil {
+		fmt.Print("error")
+	}
 }
